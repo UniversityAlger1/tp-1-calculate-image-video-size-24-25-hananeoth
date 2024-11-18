@@ -24,26 +24,7 @@ float coloredBitmap(int w, int h, char* unit) {
         return size_bits / (1024 * 1024 * 1024); // Taille en gigabits
     } else {
         // Gestion d'une unité invalide
-        printf("Unité invalide. Utilisez 'bt', 'ko', 'mo' ou 'go'.\n");
-        return -1; // Code d'erreur
+        return -1; // Code d'erreur pour unité invalide
     }
 }
-
-int main() {
-    // Exemple de paramètres d'entrée
-    int width = 640;     // Largeur de l'image
-    int height = 480;    // Hauteur de l'image
-    char unit[] = "mo";  // Unité souhaitée ('bt', 'ko', 'mo', 'go')
-
-    // Calcul de la taille de l'image
-    float taille = coloredBitmap(width, height, unit);
-
-    // Vérification et affichage du résultat
-    if (taille != -1) {
-        printf("La taille de l'image en unité '%s' est : %.2f\n", unit, taille);
-    } else {
-        printf("Erreur : unité spécifiée invalide.\n");
-    }
-
-    return 0;
 }
